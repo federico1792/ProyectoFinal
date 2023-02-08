@@ -58,15 +58,22 @@
                 <div class="row mt-5">
                     <div class="col-lg-6">
                         <div class="rounded-circle text-center">
-                            {% if dat.img3 != '' %}
+                            {% if dat.img3 != None %}
                             <img class="rounded-circle mb-3" src="{{ dat.img3.url }}" style="width: 13rem;">
                             {% else %}
+                            <p></p>
                             {% endif %}
                         </div>                    
                     </div>
                     <div class="col-lg-6 text-dark ">
+                        {% if dat.title3 != None %}
                         <h1 class="text-center mt-3">{{ dat.title3 }}</h1>
+                        {% else %}
+                        {% endif %}
+                        {% if dat.title3 != None %}
                         <p class="font-weight-bold text-left">{{ dat.description3 }}</p>
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
