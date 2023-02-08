@@ -13,7 +13,7 @@
         {% if request.user.profile.profile_image.url != '' %}
             <img src="{{ request.user.profile.profile_image.url }}" style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
         {% else %}
-            <img src="#"  style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
+            <img src="/media/index_image/blank-profile-picture.png"  style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
         {% endif %}
         <h1 class="mt-n5 font-weight-bold" style="color: rgb(0, 255, 157);">Bienvenido {{user.username}}</h1>
         <div class="text-white">

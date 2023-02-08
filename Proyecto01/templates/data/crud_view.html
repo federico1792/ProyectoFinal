@@ -17,11 +17,9 @@
 <br>
 
 <div class="container">
-    <!--
     <div class="text-right">
         <a href="/data/create-index" class="btn btn-primary text-right">Agregar IndexView</a>
     </div>
-    -->
     <br>
     <table class="table">
 
@@ -43,7 +41,7 @@
                 {% else %}
                     <td class="font-weight-bold" style="color: red;">No Img</td>
                 {% endif %}
-                <td class="d-flex justify-content-around"><a href="/data/update-index/{{dat.pk}}/" class="btn btn-warning">Editar</a><!--<a href="/data/delete-index/{{dat.pk}}/" class="btn btn-danger">Eliminar</a></td>-->
+                <td class="d-flex justify-content-around"><a href="/data/update-index/{{dat.pk}}/" class="btn btn-warning">Editar</a><a href="/data/delete-index/{{dat.pk}}/" class="btn btn-danger">Eliminar</a></td>
             </tr>
         </tbody>
         {% endfor %}

@@ -30,7 +30,7 @@
                 {% if sale.sale_image.url != '' %}
                     <img src="{{ sale.sale_image.url }}" class="card-img-top" width="300" height="380">
                 {% else %}
-                    <img src="#" class="card-img-top" width="300" height="380">
+                    <img src="/media/rentals_image/noimg.jpg" class="card-img-top" width="300" height="380">
                 {% endif %}                    
                     <div class="card-body text-dark"  style="background-color: #d7d8da;">
                         <h3 class="card-title">{{sale.title}}</h3>

@@ -15,7 +15,6 @@ def create_index_view(request):
         form = IndexChangeForm(request.POST, request.FILES)
         if form.is_valid():
             IndexChange.objects.create(
-                    cond = form.cleaned_data['cond'],
                     background = form.cleaned_data['background'],
                     team = form.cleaned_data['team'],
                     img1 = form.cleaned_data['img1'],
