@@ -1,5 +1,15 @@
 # ProyectoFinal
 
+# Usuarios
+superuser:
+  admin
+  password123
+user:
+  user
+  password123
+
+
+
 Hola Soy Campo, Gaston. El proyecto lo realice de manera individual utilizando Django, HTML, Css, Bootstrap y cuenta con:
 
 # Inicio
