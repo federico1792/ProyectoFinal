@@ -1,6 +1,6 @@
 # ProyectoFinal
 
-Hola Soy Campo, Gaston. El proyecto lo realice de manera individual y cuenta con:
+Hola Soy Campo, Gaston. El proyecto lo realice de manera individual utilizando Django, HTML, Css, Bootstrap y cuenta con:
 
 # Inicio
   Crud de imagenes, titulos y texto.
