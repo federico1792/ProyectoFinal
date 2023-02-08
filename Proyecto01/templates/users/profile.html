@@ -20,8 +20,14 @@
             <br>
             <h1 class="font-weight-bold"><u>Datos del Perfil</u></h1>
             <h3>Email: {{user.email}}</h3>
-            <h3>Telefono: {{user.profile.phone}}</h3>
-            <h3>Fecha de nacimiento: {{user.profile.birth_date}}</h3>
+            {% if user.profile.phone != None %}
+                <h3>Telefono: {{user.profile.phone}}</h3>
+            {% else %}
+            {% endif %}
+            {% if user.profile.birth_date != None %}
+                <h3>Fecha de nacimiento: {{user.profile.birth_date}}</h3>
+            {% else %}
+            {% endif %}
         </div>
         <br>
     </div>
