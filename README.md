@@ -6,7 +6,7 @@ superuser:
   password123
 user:
   user
-  password123
+  testpassword123
 
 
 
