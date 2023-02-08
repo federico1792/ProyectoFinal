@@ -25,7 +25,10 @@
         <section>
             <div class="container mt-5">
                 <div class="row">
+                    {% if dat.team != None %}
                     <div class="col text-dark text-center"><h1>{{ dat.team }}</h1></div>
+                    {% else %}
+                    {% endif %}
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-6">
@@ -37,8 +40,14 @@
                         </div>
                     </div>
                     <div class="col-lg-6 text-dark ">
+                        {% if dat.title1 != None %}
                         <h1 class="text-center mt-3">{{ dat.title1 }}</h1>
+                        {% else %}
+                        {% endif %}
+                        {% if dat.description1 != None %}
                         <p class="font-weight-bold text-left">{{ dat.description1 }}</p>
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row mt-5">
@@ -51,8 +60,14 @@
                         </div>                    
                     </div>
                     <div class="col-lg-6 text-dark ">
+                        {% if dat.title2 != None %}
                         <h1 class="text-center mt-3">{{ dat.title2 }}</h1>
+                        {% else %}
+                        {% endif %}
+                        {% if dat.description2 != None %}
                         <p class="font-weight-bold text-left">{{ dat.description2 }}</p>
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row mt-5">
