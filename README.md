@@ -2,16 +2,16 @@
 
 Hola Soy Campo, Gaston. El proyecto lo realice de manera individual y cuenta con:
 
-#Inicio
+# Inicio
   Crud de imagenes, titulos y texto.
   
-#Propiedades
+# Propiedades
   Crud de imagen, titulo, descripcion, precio, etc.
  
-#Alquileres
+# Alquileres
   Crud de imagen, titulo, descripcion, precio, etc.
   
-#Acerca de mi
+# Acerca de mi
   Cuenta con un poco de info basica.
   
 # SignUp-Login-LogOut
