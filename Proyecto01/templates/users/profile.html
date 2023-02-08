@@ -10,11 +10,11 @@
     <br>
     <div class="container text-dark text-center bg-dark rounded-circle">
         <br>
-        {% if request.user.profile.profile_image.url != '' %}
-            <img src="{{ request.user.profile.profile_image.url }}" style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
-        {% else %}
-            <img src="/media/index_image/blank-profile-picture.png"  style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
-        {% endif %}
+    {% if request.user.profile.profile_image.url != '' %}
+        <img src="{{ request.user.profile.profile_image.url }}" style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
+    {% else %}
+        <img src="/media/index_image/blank-profile-picture.png"  style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
+    {% endif %}
         <h1 class="mt-n5 font-weight-bold" style="color: rgb(0, 255, 157);">Bienvenido {{user.username}}</h1>
         <div class="text-white">
             <br>
@@ -23,10 +23,12 @@
             {% if user.profile.phone != None %}
                 <h3>Telefono: {{user.profile.phone}}</h3>
             {% else %}
+                <h3>Telefono:</h3>
             {% endif %}
             {% if user.profile.birth_date != None %}
                 <h3>Fecha de nacimiento: {{user.profile.birth_date}}</h3>
             {% else %}
+                <h3>Fecha de nacimiento:</h3>
             {% endif %}
         </div>
         <br>
