@@ -1,5 +1,8 @@
 # ProyectoFinal
 
+# Link de video
+  https://youtu.be/m2Vm4g_Wj4w
+
 # Usuarios
 superuser:
   admin
@@ -7,8 +10,6 @@ superuser:
 user:
   user
   testpassword123
-
-
 
 Hola Soy Campo, Gaston. El proyecto lo realice de manera individual utilizando Django, HTML, Css, Bootstrap y cuenta con:
 
