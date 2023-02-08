@@ -8,7 +8,7 @@ class Rental(models.Model):
     environments = models.IntegerField(verbose_name='Ambientes')
     toilets = models.IntegerField(verbose_name='Baños')
     area = models.FloatField()
-    sold = models.BooleanField(verbose_name='Vendido')
+    sold = models.BooleanField(verbose_name='Alquilado')
     rental_image = models.ImageField(upload_to='rentals_image', null=True, blank=True, verbose_name='Imagen')
 
     def __str__(self):
