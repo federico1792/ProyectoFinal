@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+
+{% block content %}
+    <br>
+    <br>
+    <div class="container text-dark text-center bg-dark rounded-circle">
+        <br>
+        {% if request.user.profile.profile_image.url != '' %}
+            <img src="{{ request.user.profile.profile_image.url }}" style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
+        {% else %}
+            <img src="#"  style="width:250px; height:250px; border-radius:160px; border:10px solid #666;">
+        {% endif %}
+        <h1 class="mt-n5 font-weight-bold" style="color: rgb(0, 255, 157);">Bienvenido {{user.username}}</h1>
+        <div class="text-white">
+            <br>
+            <h1 class="font-weight-bold"><u>Datos del Perfil</u></h1>
+            <h3>Email: {{user.email}}</h3>
+            <h3>Telefono: {{user.profile.phone}}</h3>
+            <h3>Fecha de nacimiento: {{user.profile.birth_date}}</h3>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+{% endblock %}

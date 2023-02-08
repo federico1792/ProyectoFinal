@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Alquileres
+{% endblock %}
+
+
+{% block rentals %}
+<li class="nav-item active">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col">
+                <form class="form-inline my-2 my-lg-0 justify-content-center" action="/rentals/list-rental" method="GET">
+                    <input class="form-control mr-sm-2 ml-2 w-75 border border-dark" type="search" placeholder="Buscar por zona" aria-label="Search" name="search">
+                    <button class="btn btn-success my-2 my-sm-0 border border-dark" type="submit"><i class="fa-solid fa-magnifying-glass mr-1"></i>Buscar</button>
+                </form>
+            </div>            
+        </div>
+        <div class="row">
+            {% for rental in rentals %}
+            <div class="col-lg-4 d-flex justify-content-around text-dark mt-5 mb-5">
+                <div class="card" style="width: 28rem;">
+                {% if rental.rental_image.url != '' %}
+                    <img src="{{ rental.rental_image.url }}" class="card-img-top" width="300" height="380">
+                {% else %}
+                    <img src="#" class="card-img-top" width="300" height="380">
+                {% endif %}                    
+                    <div class="card-body text-dark"  style="background-color: #d7d8da;">
+                        <h3 class="card-title">{{rental.title}}</h3>
+                        <div class="d-flex">
+                            <p><i class="fa-solid fa-location-dot mr-1">  </i>Zona: {{rental.zone}}</p>
+                        </div>
+                        <div class="text-dark">
+                        {% if rental.sold == True %}
+                            <p><del>En alquiler</del></p>
+                            <h2 style="color: red;">Alquilado</h2>
+                        {% else %}
+                            <p>En alquiler</p>
+                            <h2 style="color: red;">$ {{rental.price}}</h2>
+                        {% endif %}
+                        </div>
+                        <div class="mt-2">
+                        {% if rental.sold == True %}
+                            <a href="/rentals/detail-rental/{{rental.pk}}"><button class="btn btn-secondary w-100" disabled>Detalles</button></a>
+                        {% else %}
+                            <a href="/rentals/detail-rental/{{rental.pk}}"><button class="btn btn-primary w-100">Detalles</button></a>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

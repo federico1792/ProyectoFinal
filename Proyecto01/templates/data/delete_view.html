@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Confirmacion de borrado
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+{% if request.user.is_superuser %}
+    <div class="container text-center">
+        <h1 class="text-center">Seguro que desea eliminar</h1>
+        <h1>{{object.team}}</h1>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <br>
+            <input type="submit" value="Borrar" class="btn btn-danger">
+            <a href="/data/crud-index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% else %}
+    <div class="text-center">
+        <h1>Usted no posee permisos</h1>
+    </div>
+{% endif %}
+
+{% endblock %}

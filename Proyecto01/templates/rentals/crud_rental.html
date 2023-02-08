@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    CRUD-Alquileres
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+
+
+<br>
+
+<div class="container">
+    <div class="text-right">
+        <a href="/rentals/create-rental" class="btn btn-primary text-right">Agregar Alquiler</a>
+    </div>
+    <br>
+    <table class="table">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Zona</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Ambientes</th>
+                <th scope="col">Baños</th>
+                <th scope="col">Mts2</th>
+                <th scope="col">Vendido</th>
+                <th scope="col">Imagen</th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        {% for rental in rentals %}
+        <tbody>
+            <tr>
+                <th scope="row">{{rental.id}}</th>
+                <td>{{rental.zone}}</td>
+                <td>{{rental.price}}</td>
+                <td>{{rental.environments}}</td>
+                <td>{{rental.toilets}}</td>
+                <td>{{rental.area}}</td>
+                <td>{{rental.sold}}</td>
+                {% if rental.rental_image.url != '' %}
+                    <td><img src="{{rental.rental_image.url}}" width="50" height="50" alt=""></td>
+                {% else %}
+                    <td class="font-weight-bold" style="color: red;">No img</td>
+                {% endif %}
+                <td class="d-flex justify-content-around"><a href="/rentals/update-rental/{{rental.pk}}/" class="btn btn-warning">Editar</a><a href="/rentals/delete-rental/{{rental.pk}}/" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

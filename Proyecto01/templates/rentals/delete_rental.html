@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Confirmacion de borrado
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+{% if request.user.is_superuser %}
+    <div class="container text-center">
+        <h1 class="text-center">Seguro que desea eliminar</h1>
+        <h1>{{object.title}}</h1>
+
+        {% if rental.rental_image.url != '' %}
+            <img src="{{ object.rental_image.url }}" width="200" height="200" alt="">
+        {% else %}
+        {% endif %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <br>
+            <input type="submit" value="Borrar" class="btn btn-danger">
+            <a href="/rentals/crud-rental" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% else %}
+    <div class="text-center">
+        <h1>Usted no posee permisos</h1>
+    </div>
+{% endif %}
+
+{% endblock %}

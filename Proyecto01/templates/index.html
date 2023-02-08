@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+
+
+{% block index %}
+    <li class="nav-item active">
+{% endblock %}
+
+{% block content %}
+
+    {% for dat in data %}
+        <div>
+        {% if dat.background.url != '' %}
+            <img src="{{ dat.background.url }}" class="w-100">
+        {% else %}
+        {% endif %}    
+        </div>
+<!--SECTION TEAM-->
+        <section>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col text-dark text-center"><h1>{{ dat.team }}</h1></div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <div class="rounded-circle text-center">
+                            {% if dat.img1 != '' %}
+                            <img class="rounded-circle mb-3" src="{{ dat.img1.url }}" style="width: 13rem;">
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-dark ">
+                        <h1 class="text-center mt-3">{{ dat.title1 }}</h1>
+                        <p class="font-weight-bold text-left">{{ dat.description1 }}</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <div class="rounded-circle text-center">
+                            {% if dat.img2 != '' %}
+                            <img class="rounded-circle mb-3" src="{{ dat.img2.url }}" style="width: 13rem;">
+                            {% else %}
+                            {% endif %}
+                        </div>                    
+                    </div>
+                    <div class="col-lg-6 text-dark ">
+                        <h1 class="text-center mt-3">{{ dat.title2 }}</h1>
+                        <p class="font-weight-bold text-left">{{ dat.description2 }}</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <div class="rounded-circle text-center">
+                            {% if dat.img3 != '' %}
+                            <img class="rounded-circle mb-3" src="{{ dat.img3.url }}" style="width: 13rem;">
+                            {% else %}
+                            {% endif %}
+                        </div>                    
+                    </div>
+                    <div class="col-lg-6 text-dark ">
+                        <h1 class="text-center mt-3">{{ dat.title3 }}</h1>
+                        <p class="font-weight-bold text-left">{{ dat.description3 }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--SECTION TEAM-->
+
+    {% endfor %}
+
+{% endblock %}

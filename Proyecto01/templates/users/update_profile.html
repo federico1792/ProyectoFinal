@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+
+    <section>
+        <div class="container" style="background-color: #afb2b7;">
+            <div class="row">
+                <div class="col d-flex flex-column align-items-end">
+                    <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
+                        <h1 class="font-weight-bold mb-4"><i class="fa-solid fa-user-pen mr-4"></i>Editar perfil</h1>
+                        
+
+                        {% if form %}
+                        <form class="mb-5" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <table>{{form.as_table}}</table>
+
+                            <button type="submit" class="btn btn-success">Actualizar perfil</button>
+                            {% for field, error in errors.items %}
+                                <div class="alert alert-danger my-3 p-1" role="alert">
+                                    {{ error|striptags }}
+                                </div>
+                            {% endfor %}
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+{% endblock %}

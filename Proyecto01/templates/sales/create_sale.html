@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    Agregar Propiedad
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+  <br>
+  <br>
+  <br>
+  {% if form %}
+
+    <div class="container border d-flex justify-content-center">
+
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <table>
+          {{form.as_table}}
+        </table>
+
+        <div class="text-center">
+          <br>
+          <button type="submit" class="btn btn-primary">Crear propiedad</button>
+          <a href="/sales/crud-sale" class="btn btn-secondary">Cancelar</a>
+          <br>
+          <br>
+          <br>
+        </div>
+      </form>
+    </div>
+  {% endif %}
+  {% if form_errors %}
+    <h3 style="color: red;">Error:</h3>
+    {{form_errors}}
+  {% endif %}
+  
+  {% if message %}
+    <div class="text-center">
+      <br>
+      <h3 style="color: green;">{{ message }}</h3>
+      <br>
+      <br>
+      <a href="/sales/create-sale" class="btn btn-primary">Volver a crear una propiedad</a>
+      <a href="/sales/crud-sale" class="btn btn-warning">Volver al listado</a>
+    </div>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+{% endblock %}

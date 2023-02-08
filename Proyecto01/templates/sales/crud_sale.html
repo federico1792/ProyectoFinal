@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    CRUD-Ventas
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+
+
+<br>
+
+<div class="container">
+    <div class="text-right">
+        <a href="/sales/create-sale" class="btn btn-primary text-right">Agregar Propiedad</a>
+    </div>
+    <br>
+    <table class="table">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Zona</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Ambientes</th>
+                <th scope="col">Baños</th>
+                <th scope="col">Mts2</th>
+                <th scope="col">Vendido</th>
+                <th scope="col">Imagen</th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        {% for sale in sales %}
+        <tbody>
+            <tr>
+                <th scope="row">{{sale.id}}</th>
+                <td>{{sale.zone}}</td>
+                <td>{{sale.price}}</td>
+                <td>{{sale.environments}}</td>
+                <td>{{sale.toilets}}</td>
+                <td>{{sale.area}}</td>
+                <td>{{sale.sold}}</td>
+                {% if sale.sale_image.url != '' %}
+                    <td><img src="{{sale.sale_image.url}}" width="50" height="50" alt=""></td>
+                {% else %}
+                    <td class="font-weight-bold" style="color: red;">No img</td>
+                {% endif %}
+                <td class="d-flex justify-content-around"><a href="/sales/update-sale/{{sale.pk}}/" class="btn btn-warning">Editar</a><a href="/sales/delete-sale/{{sale.pk}}/" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

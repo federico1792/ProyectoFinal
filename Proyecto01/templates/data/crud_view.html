@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    CRUD-Index
+{% endblock %}
+
+
+{% block crud %}
+<li class="nav-item dropdown active">
+{% endblock %}
+
+
+{% block content %}
+
+
+<br>
+
+<div class="container">
+    <!--
+    <div class="text-right">
+        <a href="/data/create-index" class="btn btn-primary text-right">Agregar IndexView</a>
+    </div>
+    -->
+    <br>
+    <table class="table">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Background</th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        {% for dat in data %}
+        <tbody>
+            <tr>
+                <th scope="row">{{dat.id}}</th>
+                <td>{{dat.team}}</td>
+                {% if dat.background.url != '' %}
+                    <td><img src="{{dat.background.url}}" width="70" height="40" alt=""></td>
+                {% else %}
+                    <td class="font-weight-bold" style="color: red;">No Img</td>
+                {% endif %}
+                <td class="d-flex justify-content-around"><a href="/data/update-index/{{dat.pk}}/" class="btn btn-warning">Editar</a><!--<a href="/data/delete-index/{{dat.pk}}/" class="btn btn-danger">Eliminar</a></td>-->
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}
