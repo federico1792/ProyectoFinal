@@ -1,8 +1,5 @@
 # ProyectoFinal
 
-# Link de video
-  https://youtu.be/m2Vm4g_Wj4w
-
 # Usuarios
 superuser:
   admin
